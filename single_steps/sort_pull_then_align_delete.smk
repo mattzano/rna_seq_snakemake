@@ -9,7 +9,7 @@ end_type = "pe"
 out_spot = "salmon/"
 salmon_strand_info = "-l ISR"
 salmon_index = "/SAN/vyplab/vyplab_reference_genomes/salmon/human/GRCh38/full/gencode_v34.kmer_31/"
-
+gtf = "/SAN/vyplab/vyplab_reference_genomes/annotation/human/GRCh38/gencode.v34.annotation.gtf"
 # =-------DON"T TOUCH ANYTHING PAST THIS POINT ----------------------------
 
 output_dir = os.path.join(project_dir,out_spot)
@@ -88,16 +88,19 @@ rule salmon_quant:
     params:
         out = output_dir + "{sample}",
         out2 = output_dir + "{sample}" + "/quant.sf",
-        index_dir = salmon_index
+        index_dir = salmon_index,
+        threads = 4
     shell:
         """
         salmon quant \
         --index {params.index_dir} \
-        --libType {params.libtype} \
+        --libType {salmon_strand_info} \
         --mates1 {input.fast1} \
         --mates2 {input.fast2} \
-        --geneMap {params.gtf} \
+        --geneMap {gtf} \
         --threads {params.threads} \
-        {params.extra_params} \
-        -o {params.output_dir} \
+        --gcBias \
+        --seqBias \
+        --numBootstraps 50
+        -o {params.output_dir} 
         """
