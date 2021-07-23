@@ -1,5 +1,6 @@
 import os
 # a top level folder where the bams reside
+my_new_salmon = "/SAN/vyplab/alb_projects/tools/salmon-1.5.1_linux_x86_64/bin/salmon"
 project_dir = "/SAN/vyplab/NYGC_ALSFTD/analysis_nygc/"
 out_spot = "name_sortbams/"
 bam_spot = "cut_unc13b/"
@@ -91,7 +92,7 @@ rule salmon_quant:
         threads = 4
     shell:
         """
-        salmon quant \
+        {my_new_salmon} quant \
         --index {params.index_dir} \
         --libType {salmon_strand_info} \
         --mates1 {input.fast1} \

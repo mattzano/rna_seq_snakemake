@@ -1,8 +1,8 @@
 __default__:
-    h_vmem: 2G
+    h_vmem: 1.9G
     h_rt:   1:0:0
     submission_string: " "
-    tmem: 2G
+    tmem: 1.9G
 generate_genome:
     submission_string: "-pe smp 4 -R y"
     h_vmem:    6G
@@ -88,6 +88,11 @@ salmon_index:
     h_vmem:   10G
     tmem:   10G
     h_rt: 24:00:00
+salmon_quant:
+    submission_string: "-pe smp 4 -R y"
+    h_vmem:   8G
+    tmem:   8G
+    h_rt: 72:00:00
 salmon_quant_pe:
     submission_string: "-pe smp 4 -R y"
     h_vmem:   8G
