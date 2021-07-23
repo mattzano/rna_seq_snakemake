@@ -88,6 +88,7 @@ rule salmon_quant:
     params:
         out = output_dir + "{sample}",
         out2 = output_dir + "{sample}" + "/quant.sf"
+        index_dir = salmon_index
     shell:
         """
         salmon quant \
