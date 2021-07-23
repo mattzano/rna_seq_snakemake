@@ -84,10 +84,9 @@ rule salmon_quant:
         fast1 = fastq_dir  + "{sample}_1.merged.fastq.gz",
         fast2 = fastq_dir  + "{sample}_2.merged.fastq.gz",
     output:
-        output_dir + "{sample}_" + "quant.sf"
+        output_dir + "{sample}/" + "quant.sf"
     params:
         out = output_dir + "{sample}",
-        out2 = output_dir + "{sample}" + "/quant.sf",
         index_dir = salmon_index,
         threads = 4
     shell:
@@ -102,5 +101,5 @@ rule salmon_quant:
         --gcBias \
         --seqBias \
         --numBootstraps 50
-        -o {params.output_dir} 
+        -o {params.out} 
         """
