@@ -21,7 +21,7 @@ print(SAMPLES)
 
 rule all:
   input:
-    expand(output_dir + "{sample}_" + "quant.sf", sample = SAMPLES)
+    expand(output_dir + "{sample}/" + "quant.sf", sample = SAMPLES)
 
 rule name_sort:
     input:
