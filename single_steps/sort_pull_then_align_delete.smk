@@ -101,6 +101,6 @@ rule salmon_quant:
         --threads {params.threads} \
         --gcBias \
         --seqBias \
-        --numBootstraps 50
+        --numBootstraps 50 \
         -o {params.out} 
         """
