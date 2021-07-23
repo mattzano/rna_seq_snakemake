@@ -10,7 +10,7 @@ end_type = "pe"
 out_spot = "salmon/"
 salmon_strand_info = "ISR"
 salmon_index = "/SAN/vyplab/vyplab_reference_genomes/salmon/human/GRCh38/full/gencode_v34.kmer_31/"
-gtf = "/SAN/vyplab/vyplab_reference_genomes/annotation/human/GRCh38/gencode.v34.annotation.gtf"
+gtf = "/SAN/vyplab/vyplab_reference_genomes/salmon/human/gencode_v34geneMap.txt"
 # =-------DON"T TOUCH ANYTHING PAST THIS POINT ----------------------------
 
 output_dir = os.path.join(project_dir,out_spot)
