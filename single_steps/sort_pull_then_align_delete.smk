@@ -1,16 +1,16 @@
 import os
 # a top level folder where the bams reside
 my_new_salmon = "/SAN/vyplab/alb_projects/tools/salmon-1.5.1_linux_x86_64/bin/salmon"
-project_dir = "/SAN/vyplab/alb_projects/data/tdp_ko_collection/cut_unc13b/"
+project_dir = "/SAN/vyplab/alb_projects/data/klim_tdp/"
 out_spot = "name_sortbams/"
-bam_spot = "wards/"
+bam_spot = "STAR_aligned/"
 fastq_dir = "pulled_fastq/"
 bam_suffix = ".bam"
 end_type = "pe"
-out_spot = "salmon/"
-salmon_strand_info = "ISR"
+out_spot = "salmon_full/"
+salmon_strand_info = "A"
 salmon_index = "/SAN/vyplab/vyplab_reference_genomes/salmon/human/GRCh38/full/gencode_v34.kmer_31/"
-gtf = "/SAN/vyplab/vyplab_reference_genomes/salmon/human/gencode_v34geneMap.txt"
+gtf = "/SAN/vyplab/vyplab_reference_genomes/salmon/human/gencode_v34geneMap.txt
 # =-------DON"T TOUCH ANYTHING PAST THIS POINT ----------------------------
 
 output_dir = os.path.join(project_dir,out_spot)
