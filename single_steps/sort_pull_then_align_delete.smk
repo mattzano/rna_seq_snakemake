@@ -1,9 +1,9 @@
 import os
 # a top level folder where the bams reside
 my_new_salmon = "/SAN/vyplab/alb_projects/tools/salmon-1.5.1_linux_x86_64/bin/salmon"
-project_dir = "/SAN/vyplab/alb_projects/data/ward_bams/"
+project_dir = "/SAN/vyplab/alb_projects/data/tdp_ko_collection/"
 out_spot = "name_sortbams/"
-bam_spot = "bam_files/"
+bam_spot = "appocher_2017/"
 fastq_dir = "pulled_fastq/"
 bam_suffix = ".pass2Aligned.sortedByCoord.out.bam"
 end_type = "pe"
