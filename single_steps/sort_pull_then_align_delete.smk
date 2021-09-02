@@ -1,11 +1,11 @@
 import os
 # a top level folder where the bams reside
 my_new_salmon = "/SAN/vyplab/alb_projects/tools/salmon-1.5.1_linux_x86_64/bin/salmon"
-project_dir = "/SAN/vyplab/alb_projects/data/tdp_ko_collection/"
+project_dir = "/SAN/vyplab/NYGC_ALSFTD/"
 out_spot = "name_sortbams/"
-bam_spot = "appocher_2017/"
-fastq_dir = "pulled_fastq/"
-bam_suffix = "_unique_rg_fixed.bam"
+bam_spot = "linked_als_bams/"
+fastq_dir = "full_pulled_fastq/"
+bam_suffix = ".bam"
 end_type = "pe"
 out_spot = "salmon_full/"
 salmon_strand_info = "A"
