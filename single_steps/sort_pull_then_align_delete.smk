@@ -41,13 +41,16 @@ if end_type == "pe":
       output:
           one_out = temp(fastq_dir + "{sample}_1.merged.fastq.gz"),
           two_out = temp(fastq_dir + "{sample}_2.merged.fastq.gz")
+      params:
+          one = fastq_dir + "{sample}_1.merged.fastq",
+          two = fastq_dir + "{sample}_2.merged.fastq"
       shell:
           """
           bedtools bamtofastq -i {input} \
-                        -fq {output.one} \
-                        -fq2 {output.two}
-          gzip {input.one}
-          gzip {input.two}
+                        -fq {params.one} \
+                        -fq2 {params.two}
+          gzip {params.one}
+          gzip {params.two}
           """
 else:
   rule bam_to_fastq:
@@ -55,11 +58,13 @@ else:
           name_sort_bam = output_dir + "{sample}_namesorted.bam"
       output:
           one_out = temp(fastq_dir + "{sample}_1.merged.fastq.gz")
+      params:
+          one = fastq_dir + "{sample}_1.merged.fastq"
       shell:
           """
           bedtools bamtofastq -i {input} \
-                        -fq {output.one} 
-          gzip {input.one}
+                        -fq {params.one} 
+          gzip {params.one}
           """
 
 rule salmon_quant:
