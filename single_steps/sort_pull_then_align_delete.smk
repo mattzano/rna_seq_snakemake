@@ -17,7 +17,7 @@ output_dir = os.path.join(project_dir,out_spot)
 bam_dir = os.path.join(project_dir,bam_spot)
 fastq_dir = os.path.join(project_dir, fastq_dir)
 
-SAMPLES, = glob_wildcards(bam_dir + "{sample}" + bam_suffix)
+SAMPLES, = glob_wildcards(bam_dir + "Control"+ "{sample}" + bam_suffix)
 print(SAMPLES)
 
 rule all:
@@ -39,23 +39,13 @@ if end_type == "pe":
       input:
           name_sort_bam = output_dir + "{sample}_namesorted.bam"
       output:
-          one = temp(fastq_dir + "{sample}_1.merged.fastq"),
-          two = temp(fastq_dir + "{sample}_2.merged.fastq")
+          one_out = temp(fastq_dir + "{sample}_1.merged.fastq.gz"),
+          two_out = temp(fastq_dir + "{sample}_2.merged.fastq.gz")
       shell:
           """
           bedtools bamtofastq -i {input} \
                         -fq {output.one} \
                         -fq2 {output.two}
-          """
-  rule gunzip_fastq:
-      input:
-          one = fastq_dir + "{sample}_1.merged.fastq",
-          two = fastq_dir + "{sample}_2.merged.fastq"
-      output:
-          one_out = temp(fastq_dir + "{sample}_1.merged.fastq.gz"),
-          two_out = temp(fastq_dir + "{sample}_2.merged.fastq.gz")
-      shell:
-          """
           gzip {input.one}
           gzip {input.two}
           """
@@ -64,19 +54,11 @@ else:
       input:
           name_sort_bam = output_dir + "{sample}_namesorted.bam"
       output:
-          one = temp(fastq_dir + "{sample}_1.merged.fastq")
-      shell:
-          """
-          bedtools bamtofastq -i {input} \
-                        -fq {output.one}
-          """
-  rule gunzip_fastq:
-      input:
-          one = fastq_dir + "{sample}_1.merged.fastq"
-      output:
           one_out = temp(fastq_dir + "{sample}_1.merged.fastq.gz")
       shell:
           """
+          bedtools bamtofastq -i {input} \
+                        -fq {output.one} 
           gzip {input.one}
           """
 
