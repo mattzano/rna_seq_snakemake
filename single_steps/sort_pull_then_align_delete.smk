@@ -17,7 +17,7 @@ output_dir = os.path.join(project_dir,out_spot)
 bam_dir = os.path.join(project_dir,bam_spot)
 fastq_dir = os.path.join(project_dir, fastq_dir)
 
-SAMPLES, = glob_wildcards(bam_dir + "Control"+ "{sample}" + bam_suffix)
+SAMPLES, = glob_wildcards(bam_dir + "{sample}" + bam_suffix)
 print(SAMPLES)
 
 rule all:
