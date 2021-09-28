@@ -1,4 +1,4 @@
-import os
+import os,random
 # a top level folder where the bams reside
 my_new_salmon = "/SAN/vyplab/alb_projects/tools/salmon-1.5.1_linux_x86_64/bin/salmon"
 project_dir = "/SAN/vyplab/NYGC_ALSFTD/"
@@ -29,10 +29,14 @@ rule name_sort:
         aligned_bam = bam_dir + "{sample}" + bam_suffix
     output:
        temp(output_dir + "{sample}_namesorted.bam")
+    params:
+        n = random.randrange(1000000000)
     shell:
         """
+        echo {params.n}
         mkdir -p {output_dir}
-        samtools sort -n -@ 2 {input.aligned_bam} -o {output}
+        samtools sort -n -@ 2 \
+        {input.aligned_bam} -o {output}
         """
 if end_type == "pe":
   rule bam_to_fastq:
@@ -76,7 +80,8 @@ rule salmon_quant:
     params:
         out = output_dir + "{sample}",
         index_dir = salmon_index,
-        threads = 4
+        threads = 4,
+        
     shell:
         """
         {my_new_salmon} quant \
