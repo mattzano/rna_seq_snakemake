@@ -31,7 +31,7 @@ rule sort_bams:
 
 	shell:
 		"""
-		t=/scratch0/annbrown/$RANDOM
+		t=/scratch0/$USER/$RANDOM
 		mkdir -p $t
 		samtools sort {input} -o {output} -T $t
 		"""

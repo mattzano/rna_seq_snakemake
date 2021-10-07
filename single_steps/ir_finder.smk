@@ -1,11 +1,12 @@
 import os
 # a top level folder where the bams reside
-project_dir = "/SAN/vyplab/alb_projects/data/4su_tdp_f210i/"
+project_dir = "/SAN/vyplab/alb_projects/data/bdnf_4su_i3lmn/trial_run/STAR_aligned/"
 out_spot = "IRFinder/"
 bam_spot = "STAR_aligned_redone/"
 bam_suffix = ".Aligned.sorted.out.bam"
 IRfinder_path = "/SAN/vyplab/alb_projects/tools/IRFinder/bin/IRFinder"
-IRfinder_reference = "/SAN/vyplab/alb_projects/tools/IRFinder/REF/mouse_gencode_v25/irfinder/"
+IRfinder_reference = "/SAN/vyplab/alb_projects/tools/IRFinder/REF/human_gencode_v34/irfinder/"
+#IRfinder_reference = "/SAN/vyplab/alb_projects/tools/IRFinder/REF/mouse_gencode_v25/irfinder/"
 # =-------DON"T TOUCH ANYTHING PAST THIS POINT ----------------------------
 
 output_dir = os.path.join(project_dir,out_spot)
@@ -27,7 +28,9 @@ rule name_sort:
     shell:
         """
         mkdir -p {output_dir}
-        samtools sort -n -@ 2 {input.aligned_bam} -o {output.out_name}
+        t=/scratch0/$USER/$RANDOM
+		mkdir -p $t
+        samtools sort -T $t -n -@ 2 {input.aligned_bam} -o {output.out_name}
         """
 rule run_ir_finder:
     input:
