@@ -29,7 +29,7 @@ rule name_sort:
         """
         mkdir -p {output_dir}
         t=/scratch0/$USER/$RANDOM
-		mkdir -p $t
+        mkdir -p $t
         samtools sort -T $t -n -@ 2 {input.aligned_bam} -o {output.out_name}
         """
 rule run_ir_finder:
