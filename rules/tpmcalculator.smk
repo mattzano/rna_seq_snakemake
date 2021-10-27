@@ -5,13 +5,13 @@ include: "helpers.py"
 configfile: "config/config.yaml"
 
 #AL - I have to do this to stop align workflow breaking - you can edit the config/uncomment the second line to get it to do what you want...
-singlestep = config["tpm_singlestep"]
+#singlestep = config["tpm_singlestep"]
 singlestep = "true"
 print(singlestep)
 
 
 if singlestep == "true":
-    project_folder =  "/SAN/vyplab/alb_projects/data/liu_facs_neurons/"
+    project_folder =  "/SAN/vyplab/alb_projects/data/bdnf_4su_i3lmn/trial_run/"
     end_type = "pe"
     suffix = ".Aligned.sorted.out"
     star_output_folder = project_folder + "STAR_aligned/"
