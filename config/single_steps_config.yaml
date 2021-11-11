@@ -18,7 +18,7 @@ stringtie_longreads:
 
 feature_counts:
     # if you're using a SAF
-    gtf_used: False
+    gtf_used: True
     saf:  /SAN/vyplab/NYGC_ALSFTD/analysis_nygc/extensions.saf
     
     # Path to directory where results should be output (include slash at end)
@@ -26,7 +26,7 @@ feature_counts:
 
 
     # Dir when bams to quant are stored (include slash at end)
-    bam_spot: /SAN/vyplab/NYGC_ALSFTD/linked_als_bams/
+    bam_spot: /SAN/vyplab/NYGC_ALSFTD/temporary_bdnf/histat3n/split_conversions/
 
 
     # Pick out bams from bam_dir with this bam_suffix
@@ -35,17 +35,17 @@ feature_counts:
     bam_suffix: ".bam"
 
     # Path to GTF file of genes/regions want to quantify
-    #gtf:  /SAN/vyplab/vyplab_reference_genomes/annotation/human/ensembl/Homo_sapiens.GRCh38.100.gtf
-    gtf:  /SAN/vyplab/NYGC_ALSFTD/analysis_nygc/nanopore.ds_extensions.known_utr_plus_distal_bins.gencode_v34.gtf
+    gtf:  /SAN/vyplab/vyplab_reference_genomes/annotation/human/GRCh38/gencode.v38.annotation.gtf
+    # gtf:  /SAN/vyplab/NYGC_ALSFTD/analysis_nygc/nanopore.ds_extensions.known_utr_plus_distal_bins.gencode_v34.gtf
 
 
     # What is strandedness of data (super nice guide below)
     # https://littlebitofdata.com/en/2017/08/strandness_in_rnaseq/
-    feature_counts_strand_info: "-s 0"
+    feature_counts_strand_info: "-s 1"
 
     #"pe" if paired-end data, "se" if single-end data
     # if using long read setting (long_reads = True), put se (I think...)
-    end_type: "pe"
+    end_type: "se"
 
     # Count reads at What feature type?
     feature_type: "Name"
