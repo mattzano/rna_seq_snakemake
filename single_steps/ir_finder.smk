@@ -1,9 +1,9 @@
 import os
 # a top level folder where the bams reside
-project_dir = "/SAN/vyplab/alb_projects/data/bdnf_4su_i3lmn/trial_run/"
+project_dir = "/SAN/vyplab/alb_projects/data/ward_bams/newer_longer_bams/"
 out_spot = "IRFinder/"
-bam_spot = "STAR_aligned/"
-bam_suffix = ".Aligned.sorted.out.bam"
+bam_spot = "WARD_BAMS_NEW/"
+bam_suffix = ".pass2Aligned.sortedByCoord.out.bam"
 IRfinder_path = "/SAN/vyplab/alb_projects/tools/IRFinder/bin/IRFinder"
 IRfinder_reference = "/SAN/vyplab/alb_projects/tools/IRFinder/REF/human_gencode_v34/irfinder/"
 #IRfinder_reference = "/SAN/vyplab/alb_projects/tools/IRFinder/REF/mouse_gencode_v25/irfinder/"
