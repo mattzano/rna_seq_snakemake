@@ -1,7 +1,7 @@
 import os
 # a top level folder where the bams reside
 project_dir = "/SAN/vyplab/alb_projects/data/ward_bams/newer_longer_bams/"
-out_spot = "IRFinder/"
+out_spot = "WARD_BAMS_NEW/IRFinder/"
 bam_spot = "WARD_BAMS_NEW/"
 bam_suffix = ".pass2Aligned.sortedByCoord.out.bam"
 IRfinder_path = "/SAN/vyplab/alb_projects/tools/IRFinder/bin/IRFinder"
