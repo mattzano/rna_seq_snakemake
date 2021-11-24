@@ -22,7 +22,7 @@ feature_counts:
     saf:  /SAN/vyplab/NYGC_ALSFTD/analysis_nygc/extensions.saf
     
     # Path to directory where results should be output (include slash at end)
-    out_spot: /SAN/vyplab/NYGC_ALSFTD/temporary_bdnf/histat3n/split_conversions/featureCounts/
+    out_spot: /SAN/vyplab/alb_projects/data/4su_full_ward_tdp_kd_ipsc/STAR_aligned/featureCounts/
 
 
     # Dir when bams to quant are stored (include slash at end)
