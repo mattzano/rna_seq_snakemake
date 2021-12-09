@@ -63,7 +63,7 @@ if config['end_type'] == "pe":
             --json {output.fastpjson} \
             --html {output.fastphtml} \
             {params.fastp_parameters} \
-            2> {log}
+            &> {log}
             """
 else:
         rule fastp_trimming:
@@ -96,7 +96,7 @@ else:
                 --json {output.fastpjson} \
                 --html {output.fastphtml} \
                 {params.fastp_parameters} \
-                2> {log}
+                &> {log}
                 """
 
 if config['end_type'] == "pe":
