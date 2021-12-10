@@ -30,8 +30,8 @@ fastp_trimming:
     h_rt: 72:00:00
 run_star_pe:
     submission_string: "-pe smp 4 -R y"
-    h_vmem:   8G
-    tmem:   8G
+    h_vmem:   12G
+    tmem:   12G
     h_rt: 72:00:00
 run_star_se:
     submission_string: "-pe smp 4 -R y"
@@ -129,8 +129,8 @@ inner_distance_freq:
     tmem:   8G
     h_rt: 72:00:00
 junction_saturation:
-    h_vmem:   8G
-    tmem:   8G
+    h_vmem:   10G
+    tmem:   10G
     h_rt: 72:00:00
 read_distribution:
     h_vmem:   8G
