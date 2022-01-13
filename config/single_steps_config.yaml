@@ -18,15 +18,15 @@ stringtie_longreads:
 
 feature_counts:
     # if you're using a SAF
-    gtf_used: False
-    saf:  /SAN/vyplab/NYGC_ALSFTD/analysis_nygc/extensions.saf
+    gtf_used: True
+    #saf:   /Users/matteozanovello/Desktop/extensions.saf
     
     # Path to directory where results should be output (include slash at end)
-    out_spot: /SAN/vyplab/first_weeks/TDP_CHX_CLONES_GLIA/feature_counts/
+    out_spot: /Users/matteozanovello/Documents/GitHub/feature_counts/
 
 
     # Dir when bams to quant are stored (include slash at end)
-    bam_spot: /SAN/vyplab/first_weeks/TDP_CHX_CLONES_GLIA/STAR_aligned/
+    bam_spot: /Users/matteozanovello/Documents/GitHub/STAR_aligned/
 
 
     # Pick out bams from bam_dir with this bam_suffix
@@ -35,8 +35,8 @@ feature_counts:
     bam_suffix: ".bam"
 
     # Path to GTF file of genes/regions want to quantify
-    #gtf:  /SAN/vyplab/vyplab_reference_genomes/annotation/human/ensembl/Homo_sapiens.GRCh38.100.gtf
-    gtf:  /SAN/vyplab/NYGC_ALSFTD/analysis_nygc/nanopore.ds_extensions.known_utr_plus_distal_bins.gencode_v34.gtf
+    gtf:  /Users/matteozanovello/Desktop/ensembl/gencode.v34.annotation.gtf
+    #gtf:  /Users/matteozanovello/Desktop/nanopore.ds_extensions.known_utr_plus_distal_bins.gencode_v34.gtf
 
 
     # What is strandedness of data (super nice guide below)
@@ -48,20 +48,20 @@ feature_counts:
     end_type: "pe"
 
     # Count reads at What feature type?
-    feature_type: "Name"
+    feature_type: "exon"
 
     # Count reads at 'feature' level (each exon) or for whole gene (put sth other than "feature")
-    count_at: "feature"
+    count_at: ""
     # What identifier in GTF to use for constructing meta-features if counting at the gene level
     # usually 'gene_id' is best
-    attribute_type: "Name"
+    attribute_type: "gene_id"
 
     # Use long reads (-L) setting
     # True if use, else False
     long_reads: False
 
     # No need to change this
-    feature_counts_path: /SAN/vyplab/alb_projects/tools/subread-1.6.4-Linux-x86_64/bin/featureCounts
+    feature_counts_path: /Users/matteozanovello/Desktop/subread-1.6.4-MacOSX-x86_64/bin/featureCounts
 
 
 bedtools_coverage:
