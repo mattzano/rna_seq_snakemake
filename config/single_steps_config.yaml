@@ -35,7 +35,7 @@ feature_counts:
     bam_suffix: ".bam"
 
     # Path to GTF file of genes/regions want to quantify
-    gtf:  /Users/matteozanovello/Desktop/ensembl/gencode.v34.annotation.gtf
+    gtf:  /Users/matteozanovello/Documents/phd/research_lines/rna_seq_splicing_snakemake/ensembl/gencode.v34.annotation.gtf
     #gtf:  /Users/matteozanovello/Desktop/nanopore.ds_extensions.known_utr_plus_distal_bins.gencode_v34.gtf
 
 
@@ -61,7 +61,7 @@ feature_counts:
     long_reads: False
 
     # No need to change this
-    feature_counts_path: /Users/matteozanovello/Desktop/subread-1.6.4-MacOSX-x86_64/bin/featureCounts
+    feature_counts_path: /Users/matteozanovello/Documents/phd/research_lines/rna_seq_splicing_snakemake/subread-1.6.4-MacOSX-x86_64/bin/featureCounts
 
 
 bedtools_coverage:
